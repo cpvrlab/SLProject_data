@@ -7,13 +7,11 @@
 //             WITHOUT ANY WARRANTIES WHETHER EXPRESSED OR IMPLIED.
 //#############################################################################
 
-#ifdef GL_FRAGMENT_PRECISION_HIGH
-precision mediump float;
-#endif
+#version 130
 
-varying vec4 v_color;   // interpolated color calculated in the vertex shader 
+in vec4 diffuseColor;   // interpolated color calculated in the vertex shader 
 
 void main()
 {     
-   gl_FragColor = v_color;
+   gl_FragColor = diffuseColor;
 }
