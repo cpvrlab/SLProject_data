@@ -7,19 +7,17 @@
 //             WITHOUT ANY WARRANTIES WHETHER EXPRESSED OR IMPLIED.
 //#############################################################################
 
-#version 130
-
 //-----------------------------------------------------------------------------
-in      vec4     a_position;       // Vertex position attribute
-in      vec3     a_normal;         // Vertex normal attribute
+attribute vec4     a_position;       // Vertex position attribute
+attribute vec3     a_normal;         // Vertex normal attribute
 
-uniform mat4     u_mvpMatrix;      // = projection * modelView
-uniform mat3     u_nMatrix;        // normal matrix=transpose(inverse(mv))
-uniform vec3     u_lightDirVS;     // light direction in view space
-uniform vec4     u_lightDiffuse;   // diffuse light intensity (Id)
-uniform vec4     u_matDiffuse;     // diffuse material reflection (kd)
+uniform   mat4     u_mvpMatrix;      // = projection * modelView
+uniform   mat3     u_nMatrix;        // normal matrix=transpose(inverse(mv))
+uniform   vec3     u_lightDirVS;     // light direction in view space
+uniform   vec4     u_lightDiffuse;   // diffuse light intensity (Id)
+uniform   vec4     u_matDiffuse;     // diffuse material reflection (kd)
 
-out     vec4     diffuseColor;     // The resulting color per vertex
+varying   vec4     diffuseColor;     // The resulting color per vertex
 
 //-----------------------------------------------------------------------------
 void main()

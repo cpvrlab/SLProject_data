@@ -7,9 +7,7 @@
 //             WITHOUT ANY WARRANTIES WHETHER EXPRESSED OR IMPLIED.
 //#############################################################################
 
-#version 130
-
-in vec4 diffuseColor;   // interpolated color calculated in the vertex shader 
+varying vec4 diffuseColor;   // interpolated color calculated in the vertex shader
 
 void main()
 {     
