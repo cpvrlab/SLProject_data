@@ -12,7 +12,7 @@
 attribute   vec4  a_position;    // Vertex position attribute
 attribute   vec3  a_normal;      // Vertex normal attribute
 attribute   vec2  a_texCoord;    // Vertex texture coordiante attribute
-attribute   vec4  a_jointIds;    // Vertex joint indexes attributes
+attribute   vec4  a_jointIds;    // Vertex joint indices attributes
 attribute   vec4  a_jointWeights;// Vertex joint weights attributes
 
 uniform     mat4  u_mvMatrix;    // modelview matrix 
@@ -28,7 +28,7 @@ varying     vec2  v_texCoord;    // Texture coordiante varying
 void main(void)
 {  
     // In skinned skeleton animation every vertex of a mesh is transformed by
-    // max. four joints (bones) of a skeleton identified by indexes. The joint
+    // max. four joints (bones) of a skeleton identified by indices. The joint
     // matrix is a weighted sum fore joint matrices and can change per frame
     // to animate the mesh
     mat4 jm = u_jointMatrices[int(a_jointIds.x)] * a_jointWeights.x
