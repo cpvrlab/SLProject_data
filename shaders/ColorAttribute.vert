@@ -10,7 +10,7 @@
 
 attribute   vec4     a_position;  // Vertex position attribute
 attribute   vec4     a_color;     // Vertex color attribute
-uniform     mat4     u_mvpMatrix; // = projection * modelView
+uniform     mat4     u_mvpMatrix; // modelview-projection matrix = projection * modelView
 varying     vec4     v_color;     // Resulting color per vertex
 
 void main(void)
