@@ -2,5 +2,5 @@
 numInnerCornersWidth: 8
 numInnerCornersHeight: 6
 squareSizeMM: 35.4
-captureDelayMS: 100
+captureDelayMS: 1000
 numOfImgsToCapture: 25
