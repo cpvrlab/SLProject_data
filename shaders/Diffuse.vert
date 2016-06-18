@@ -1,5 +1,5 @@
 //#############################################################################
-//  File:      Difuse.vert
+//  File:      Diffuse.vert
 //  Purpose:   GLSL vertex program for simple diffuse per vertex lighting
 //  Date:      September 2012 (HS12)
 //  Copyright: Marcus Hudritsch
