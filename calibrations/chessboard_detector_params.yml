@@ -1,0 +1,4 @@
+%YAML:1.0
+boardWidth: 6
+boardHeight: 8
+edgeLengthM: 0.035
