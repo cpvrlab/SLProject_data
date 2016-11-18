@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <opencv_storage>
-<calibration_time>"Thu Jun  9 12:38:56 2016"</calibration_time>
-<nr_of_frames>25</nr_of_frames>
+<calibration_time>"Fri Nov 18 11:13:45 2016"</calibration_time>
+<nr_of_frames>20</nr_of_frames>
 <image_width>640</image_width>
 <image_height>480</image_height>
 <board_width>8</board_width>
-<board_height>6</board_height>
-<square_size>3.5400001525878906e+01</square_size>
+<board_height>5</board_height>
+<square_size>28.</square_size>
 <fix_aspect_ratio>1</fix_aspect_ratio>
 <!-- flags: +fix_aspectRatio +fix_principal_point +zero_tangent_dist -->
 <flags>14</flags>
@@ -15,14 +15,14 @@
   <cols>3</cols>
   <dt>d</dt>
   <data>
-    7.0267562585764540e+02 0. 3.1950000000000000e+02 0.
-    7.0267562585764540e+02 2.3950000000000000e+02 0. 0. 1.</data></camera_matrix>
+    6.8089144002530963e+02 0. 3.1950000000000000e+02 0.
+    6.8089144002530963e+02 2.3950000000000000e+02 0. 0. 1.</data></camera_matrix>
 <distortion_coefficients type_id="opencv-matrix">
   <rows>5</rows>
   <cols>1</cols>
   <dt>d</dt>
   <data>
-    1.5553487188052606e-01 -4.4649865743054723e-01 0. 0.
-    4.2207415915958346e-01</data></distortion_coefficients>
-<avg_reprojection_error>5.1456149748816038e-01</avg_reprojection_error>
+    2.1290758786412142e-01 -7.7131960724834547e-01 0. 0.
+    1.1532594739524336e+00</data></distortion_coefficients>
+<avg_reprojection_error>1.3752690440285020e+00</avg_reprojection_error>
 </opencv_storage>
