@@ -122,8 +122,8 @@ void main()
    
     vec3 N = normalize(v_N_VS);  // A varying normal has not anymore unit length
     vec3 E = normalize(-v_P_VS); // Vector from p to the eye
-   
-    // Early versions of GLSL do not allow uniforms in for loops
+
+    /* Some GPU manufacturers do not allow uniforms in for loops
     for (int i=0; i<8; i++)
     {   if (i < u_numLightsUsed && u_lightIsOn[i])
         {
@@ -132,7 +132,40 @@ void main()
             else
                 PointLight(i, v_P_VS, N, E, Ia, Id, Is);
         }
-    }
+    }*/
+
+    if (u_lightIsOn[0])
+        if (u_lightPosVS[0].w == 0.0)
+             DirectLight(0, N, E, Ia, Id, Is);
+        else PointLight(0, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[1])
+        if (u_lightPosVS[1].w == 0.0)
+             DirectLight(1, N, E, Ia, Id, Is);
+        else PointLight(1, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[2])
+        if (u_lightPosVS[2].w == 0.0)
+             DirectLight(2, N, E, Ia, Id, Is);
+        else PointLight(2, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[3])
+        if (u_lightPosVS[3].w == 0.0)
+             DirectLight(3, N, E, Ia, Id, Is);
+        else PointLight(3, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[4])
+        if (u_lightPosVS[4].w == 0.0)
+             DirectLight(4, N, E, Ia, Id, Is);
+        else PointLight(4, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[5])
+        if (u_lightPosVS[5].w == 0.0)
+             DirectLight(5, N, E, Ia, Id, Is);
+        else PointLight(5, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[6])
+        if (u_lightPosVS[6].w == 0.0)
+             DirectLight(6, N, E, Ia, Id, Is);
+        else PointLight(6, v_P_VS, N, E, Ia, Id, Is);
+    if (u_lightIsOn[7])
+        if (u_lightPosVS[7].w == 0.0)
+             DirectLight(7, N, E, Ia, Id, Is);
+        else PointLight(7, v_P_VS, N, E, Ia, Id, Is);
    
     // Sum up all the reflected color components
     gl_FragColor =  u_globalAmbient +

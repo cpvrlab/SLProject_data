@@ -144,11 +144,11 @@ void main()
     jnm[0][1] = jm[0][1]; jnm[1][1] = jm[1][1]; jnm[2][1] = jm[2][1];
     jnm[0][2] = jm[0][2]; jnm[1][2] = jm[1][2]; jnm[2][2] = jm[2][2];
                     
-   vec3 P_VS = vec3(u_mvMatrix * jm * a_position);
-   vec3 N = normalize(vec3(u_nMatrix * jnm * a_normal));
-   vec3 E = normalize(-P_VS);
+    vec3 P_VS = vec3(u_mvMatrix * jm * a_position);
+    vec3 N = normalize(vec3(u_nMatrix * jnm * a_normal));
+    vec3 E = normalize(-P_VS);
 
-    // Early versions of GLSL do not allow uniforms in for loops
+    /* Some GPU manufacturers do not allow uniforms in for loops
     for (int i=0; i<8; i++)
     {   if (i < u_numLightsUsed && u_lightIsOn[i])
         {
@@ -157,7 +157,40 @@ void main()
             else
                 PointLight(i, P_VS, N, E, Ia, Id, Is);
         }
-    }
+    }*/
+
+   if (u_lightIsOn[0])
+       if (u_lightPosVS[0].w == 0.0)
+            DirectLight(0, N, E, Ia, Id, Is);
+       else PointLight(0, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[1])
+       if (u_lightPosVS[1].w == 0.0)
+            DirectLight(1, N, E, Ia, Id, Is);
+       else PointLight(1, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[2])
+       if (u_lightPosVS[2].w == 0.0)
+            DirectLight(2, N, E, Ia, Id, Is);
+       else PointLight(2, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[3])
+       if (u_lightPosVS[3].w == 0.0)
+            DirectLight(3, N, E, Ia, Id, Is);
+       else PointLight(3, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[4])
+       if (u_lightPosVS[4].w == 0.0)
+            DirectLight(4, N, E, Ia, Id, Is);
+       else PointLight(4, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[5])
+       if (u_lightPosVS[5].w == 0.0)
+            DirectLight(5, N, E, Ia, Id, Is);
+       else PointLight(5, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[6])
+       if (u_lightPosVS[6].w == 0.0)
+            DirectLight(6, N, E, Ia, Id, Is);
+       else PointLight(6, P_VS, N, E, Ia, Id, Is);
+   if (u_lightIsOn[7])
+       if (u_lightPosVS[7].w == 0.0)
+            DirectLight(7, N, E, Ia, Id, Is);
+       else PointLight(7, P_VS, N, E, Ia, Id, Is);
    
     // Sum up all the reflected color components
     v_color =  u_matEmissive +
